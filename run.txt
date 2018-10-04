@@ -1,0 +1,11 @@
+docker build -f Dockerfile.dev .
+
+
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app 30ac327ed38b  
+
+docker run -it 8277fa1bea44 npm run test
+
+## remove all container
+```
+docker rm $(docker ps -aq)
+```
